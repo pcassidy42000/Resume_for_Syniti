@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paul Cassidy | Strategic Account Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; -webkit-print-color-adjust: exact; }
+        
+        /* Print specific styles to ensure it looks good on paper/PDF */
+        @media print {
+            body { background-color: white; }
+            .no-print { display: none; }
+            .page-break { page-break-before: always; }
+            .section-container { box-shadow: none; border: 1px solid #eee; margin-bottom: 2rem; }
+        }
+
+        .section-header {
+            @apply text-2xl font-bold text-blue-900 border-b-2 border-blue-100 pb-2 mb-6;
+        }
+        .stat-item {
+            @apply p-4 bg-gray-50 rounded-lg border border-gray-100;
+        }
+        .stat-label {
+            @apply text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1;
+        }
+        .stat-value {
+            @apply text-xl font-bold text-blue-900;
+        }
+        .stat-sub {
+            @apply text-xs text-gray-500 mt-1;
+        }
+        .job-header {
+            @apply flex flex-col md:flex-row md:justify-between md:items-start mb-4;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800 p-4 md:p-8">
+
+    <div class="max-w-5xl mx-auto space-y-8">
+        
+        <!-- Header / Contact -->
+        <header class="bg-white p-8 rounded-lg shadow-sm border-t-4 border-blue-900">
+            <div class="flex flex-col md:flex-row justify-between items-start">
+                <div>
+                    <h1 class="text-4xl font-bold text-gray-900">Paul Cassidy</h1>
+                    <p class="text-xl font-medium text-blue-700 mt-1">Diamond Account Manager | SAP Enterprise Cloud & Transformation Sales</p>
+                </div>
+                <div class="text-sm text-gray-600 mt-4 md:mt-0 md:text-right leading-relaxed">
+                    <p>Chicago, IL | 810-577-8713</p>
+                    <p>pcassidy42000@gmail.com</p>
+                    <p class="text-blue-700 font-medium"><a href="https://linkedin.com/in/pcassidyplm" target="_blank">linkedin.com/in/pcassidyplm</a></p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Profile & Performance -->
+        <section class="bg-white p-8 rounded-lg shadow-sm">
+            <h2 class="section-header">Executive Summary & Performance</h2>
+            
+            <div class="flex flex-col md:flex-row gap-8 mb-8">
+                <div class="md:w-2/3">
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        Top-performing Enterprise Sales Executive with 10+ years of experience selling SAP services and software into Fortune 500 manufacturing and CPG accounts. Recognized as the <strong>#1 Global Salesperson in 2024</strong> (106% quota attainment).
+                    </p>
+                    <p class="text-gray-700 leading-relaxed">
+                        Specialized in a <strong>"Software-led Services"</strong> model, leveraging proprietary platforms (LCPaaS, CENITConnect) to drive complex S/4HANA migrations, data modernization, and recurring revenue growth. Expert in aligning SAP RISE, Hyperscalers (AWS/Azure), and Global SIs to deliver high-margin outcomes.
+                    </p>
+                </div>
+                <div class="md:w-1/3 bg-blue-50 p-4 rounded-lg border border-blue-100">
+                    <h3 class="text-blue-900 font-bold mb-3 text-sm uppercase tracking-wide">Core Competencies</h3>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-start"><span class="text-blue-500 mr-2">✓</span> Software-Attached Sales (SaaS/PaaS)</li>
+                        <li class="flex items-start"><span class="text-blue-500 mr-2">✓</span> SAP Data Modernization & Clean Core</li>
+                        <li class="flex items-start"><span class="text-blue-500 mr-2">✓</span> Complex Deal Orchestration</li>
+                        <li class="flex items-start"><span class="text-blue-500 mr-2">✓</span> Strategic Account Growth</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- KPI Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="stat-item">
+                    <p class="stat-label">Quota Attainment</p>
+                    <p class="stat-value text-green-600">106%</p>
+                    <p class="stat-sub">FY24 Top Performer</p>
+                </div>
+                <div class="stat-item">
+                    <p class="stat-label">Annual Quota</p>
+                    <p class="stat-value">$8.6M</p>
+                    <p class="stat-sub">Services & Software</p>
+                </div>
+                <div class="stat-item">
+                    <p class="stat-label">Largest Deal</p>
+                    <p class="stat-value">$5.0M</p>
+                    <p class="stat-sub">$4M Proj + $1M ARR</p>
+                </div>
+                <div class="stat-item">
+                    <p class="stat-label">Lifetime Rev (CENIT)</p>
+                    <p class="stat-value">$25M+</p>
+                    <p class="stat-sub">13-Year Tenure</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience: Lemongrass -->
+        <section class="bg-white p-8 rounded-lg shadow-sm">
+            <h2 class="section-header">Professional Experience</h2>
+
+            <div class="mb-10">
+                <div class="job-header">
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900">Lemongrass Consulting</h3>
+                        <p class="text-blue-700 font-medium">Diamond Account Manager (SAP Services & Cloud Transformation)</p>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-gray-600 font-medium">2023 – 2025</p>
+                        <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded font-bold">Delivered $10.5M+ Revenue</span>
+                    </div>
+                </div>
+                
+                <p class="text-gray-700 italic mb-6">
+                    Managed full sales lifecycle for large CPG and manufacturing clients, transitioning the engagement model from pure Managed Services to a "Software + Services" (LCPaaS) approach.
+                </p>
+
+                <!-- Mondelez -->
+                <div class="bg-gray-50 p-6 rounded-lg mb-6 border-l-4 border-blue-500">
+                    <h4 class="text-lg font-bold text-blue-900 mb-2">Strategic Account: Mondelez International (CPG)</h4>
+                    <ul class="list-disc list-outside pl-5 space-y-2 text-gray-700">
+                        <li><strong>Software-Led RISE Enablement:</strong> Closed a <strong>$4.3M</strong> multi-phase SAP RISE transformation. Positioned Lemongrass Cloud Platform (LCPaaS) as the governing software layer, embedding proprietary automation into an Accenture-led transformation.</li>
+                        <li><strong>Data Fabric & Clean Core Strategy:</strong> Led initiatives for <strong>SAP Datasphere extractor replacement</strong>, BW rationalization, and <strong>LCP AI Clean Core</strong> programs under CIO/CTO sponsorship.</li>
+                        <li><strong>Regulated Market Carve-Out (Project ROSE):</strong> Designed and sold a specialized "Operate Agreement" for a geopolitical carve-out, utilizing software cloning to separate the Russia landscape while protecting the global core.</li>
+                    </ul>
+                </div>
+
+                <!-- SRAM -->
+                <div class="bg-gray-50 p-6 rounded-lg mb-6 border-l-4 border-blue-500">
+                    <h4 class="text-lg font-bold text-blue-900 mb-2">Strategic Account: SRAM Corporation (Manufacturing)</h4>
+                    <ul class="list-disc list-outside pl-5 space-y-2 text-gray-700">
+                        <li><strong>S/4HANA on RISE Migration:</strong> Secured a multi-million dollar <strong>RISE + DR</strong> transformation, winning against commodity MSPs by packaging proprietary automation software with high-value security services.</li>
+                        <li><strong>Resilience as a Service:</strong> Designed and sold a dedicated SAP disaster-recovery solution (RPO/RTO targets) and converted it into a recurring "DR Assurance" service.</li>
+                        <li><strong>Security & Compliance:</strong> Staffed PAM, SAP Identity Authentication Service (IAS), and SAP GRC specialists to ensure audit readiness.</li>
+                    </ul>
+                </div>
+
+                <!-- Other Wins -->
+                <div class="px-6">
+                    <p class="text-gray-800 font-semibold mb-2">Additional Strategic Wins:</p>
+                    <ul class="list-disc pl-5 text-gray-700 space-y-1">
+                        <li><strong>Bombardier Recreational Products (BRP):</strong> Drove SAP modernization using <strong>Automation-First</strong> and <strong>LCP AI</strong> methodologies, leveraging hyperscaler funding.</li>
+                        <li><strong>Reynolds Consumer Products:</strong> Advanced SAP Cloud transformation initiatives aligned with SAP’s Vision-to-Value framework.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-200 my-8"></div>
+
+            <!-- Experience: CENIT -->
+            <div class="mb-4">
+                <div class="job-header">
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900">CENIT, North America, Inc.</h3>
+                        <p class="text-blue-700 font-medium">Sales Director, SAP PLM Services</p>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-gray-600 font-medium">2010 – 2023</p>
+                        <p class="text-xs text-gray-500">13-Year Tenure</p>
+                    </div>
+                </div>
+                <p class="text-sm text-gray-500 mb-4">Career Progression: Sales Director (2017-23) | Senior Account Manager (2013-17) | Account Manager (2010-13)</p>
+
+                <p class="text-gray-700 mb-4">
+                    Directed the strategic pivot toward high-value SAP PLM services, driving growth through a solution-led sales methodology centered on the <strong>CENITConnect</strong> integration platform.
+                </p>
+
+                <ul class="list-disc list-outside pl-5 space-y-2 text-gray-700">
+                    <li><strong>Revenue Impact:</strong> Contributed to over <strong>$25M in lifetime revenue</strong> by shifting sales focus from point solutions to complex, multi-year digital continuity programs.</li>
+                    <li><strong>Marquee Account Expansion:</strong> Expanded footprint in key accounts including <strong>Rivian, Bell Flight, Lam Research, Lincoln Electric, AO Smith, Timken, and Mitsubishi Electric</strong>.</li>
+                    <li><strong>Data Integration Strategy:</strong> Secured complex digital continuity programs bridging <strong>Engineering (PLM)</strong> and <strong>SAP ERP</strong>. Positioned software as the critical "Data Bridge" for Master Data integrity.</li>
+                    <li><strong>Software-First Transition:</strong> Successfully shifted customer conversations from one-time projects to recurring software subscriptions + implementation services.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Earlier Roles & Education -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <section class="bg-white p-8 rounded-lg shadow-sm">
+                <h2 class="section-header text-lg">Earlier Roles</h2>
+                <ul class="space-y-4 text-gray-700">
+                    <li>
+                        <strong class="block text-gray-900">Regional Sales Manager & Senior AM</strong>
+                        <span class="text-sm text-gray-600">INCAT (TATA Technologies)</span>
+                    </li>
+                    <li>
+                        <strong class="block text-gray-900">Engineering Software Sales</strong>
+                        <span class="text-sm text-gray-600">IBM (UK)</span>
+                    </li>
+                    <li>
+                        <strong class="block text-gray-900">Major Account Consulting Sales</strong>
+                        <span class="text-sm text-gray-600">Think3</span>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="bg-white p-8 rounded-lg shadow-sm">
+                <h2 class="section-header text-lg">Education & Community</h2>
+                <div class="mb-6">
+                    <strong class="block text-gray-900">B.Eng., Engineering</strong>
+                    <span class="text-gray-600">University College Dublin (UCD)</span>
+                </div>
+                <div>
+                    <strong class="block text-gray-900 mb-2">Leadership & Impact</strong>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-2">♥</span>
+                            <span>Raised <strong>>$1M</strong> for the Arsenal Foundation (Refugees in Jordan/Ukraine).</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-2">🎙</span>
+                            <span>Co-host of an international soccer podcast covering <em>The Beautiful Game</em>.</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+
+        <!-- Footer for Print -->
+        <div class="text-center text-gray-400 text-xs pt-8 pb-4 no-print">
+            <p>Generated Strategic Portfolio - Paul Cassidy</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
