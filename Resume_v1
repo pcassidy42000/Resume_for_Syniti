@@ -3,233 +3,306 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paul Cassidy | Strategic Account Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Paul Cassidy - Strategic Portfolio</title>
     <style>
-        body { font-family: 'Inter', sans-serif; -webkit-print-color-adjust: exact; }
-        
-        /* Print specific styles to ensure it looks good on paper/PDF */
-        @media print {
-            body { background-color: white; }
-            .no-print { display: none; }
-            .page-break { page-break-before: always; }
-            .section-container { box-shadow: none; border: 1px solid #eee; margin-bottom: 2rem; }
+        /* Core Reset & Typography */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 40px 20px;
+            -webkit-print-color-adjust: exact;
         }
 
-        .section-header {
-            @apply text-2xl font-bold text-blue-900 border-b-2 border-blue-100 pb-2 mb-6;
+        /* Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
         }
-        .stat-item {
-            @apply p-4 bg-gray-50 rounded-lg border border-gray-100;
+
+        /* Headers */
+        header {
+            border-bottom: 4px solid #1e3a8a; /* Blue-900 */
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
         }
-        .stat-label {
-            @apply text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1;
+
+        h1 {
+            margin: 0;
+            font-size: 36px;
+            color: #1e3a8a;
         }
+
+        .subtitle {
+            font-size: 18px;
+            color: #1d4ed8; /* Blue-700 */
+            margin-top: 5px;
+            font-weight: 600;
+        }
+
+        .contact-info {
+            text-align: right;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .contact-info a {
+            color: #1d4ed8;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 22px;
+            color: #1e3a8a;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        h3 {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .role-title {
+            color: #1d4ed8;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .date-badge {
+            background: #dcfce7; /* Green-100 */
+            color: #166534; /* Green-800 */
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            display: inline-block;
+            margin-left: 10px;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .stat-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+        }
+
         .stat-value {
-            @apply text-xl font-bold text-blue-900;
+            display: block;
+            font-size: 24px;
+            font-weight: bold;
+            color: #1e3a8a;
         }
+
+        .stat-label {
+            font-size: 12px;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
         .stat-sub {
-            @apply text-xs text-gray-500 mt-1;
+            font-size: 11px;
+            color: #94a3b8;
         }
-        .job-header {
-            @apply flex flex-col md:flex-row md:justify-between md:items-start mb-4;
+
+        /* Lists */
+        ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .project-block {
+            background: #f9fafb;
+            padding: 20px;
+            border-left: 4px solid #3b82f6; /* Blue-500 */
+            margin-bottom: 20px;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .competencies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background: #e0f2fe;
+            color: #0369a1;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* Print Optimization */
+        @media print {
+            body { background: white; padding: 0; }
+            .container { box-shadow: none; padding: 0; width: 100%; max-width: 100%; }
+            header { margin-bottom: 20px; }
+            .project-block { break-inside: avoid; }
+            a { text-decoration: none; color: #333; }
+        }
+        
+        /* Mobile responsive */
+        @media (max-width: 600px) {
+            header { flex-direction: column; }
+            .contact-info { text-align: left; margin-top: 15px; }
         }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-800 p-4 md:p-8">
+<body>
 
-    <div class="max-w-5xl mx-auto space-y-8">
+    <div class="container">
         
-        <!-- Header / Contact -->
-        <header class="bg-white p-8 rounded-lg shadow-sm border-t-4 border-blue-900">
-            <div class="flex flex-col md:flex-row justify-between items-start">
-                <div>
-                    <h1 class="text-4xl font-bold text-gray-900">Paul Cassidy</h1>
-                    <p class="text-xl font-medium text-blue-700 mt-1">Diamond Account Manager | SAP Enterprise Cloud & Transformation Sales</p>
-                </div>
-                <div class="text-sm text-gray-600 mt-4 md:mt-0 md:text-right leading-relaxed">
-                    <p>Chicago, IL | 810-577-8713</p>
-                    <p>pcassidy42000@gmail.com</p>
-                    <p class="text-blue-700 font-medium"><a href="https://linkedin.com/in/pcassidyplm" target="_blank">linkedin.com/in/pcassidyplm</a></p>
-                </div>
+        <header>
+            <div>
+                <h1>Paul Cassidy</h1>
+                <div class="subtitle">Diamond Account Manager | SAP Enterprise Cloud</div>
+            </div>
+            <div class="contact-info">
+                <div>Chicago, IL | 810-577-8713</div>
+                <div>pcassidy42000@gmail.com</div>
+                <div><a href="https://linkedin.com/in/pcassidyplm">linkedin.com/in/pcassidyplm</a></div>
             </div>
         </header>
 
-        <!-- Profile & Performance -->
-        <section class="bg-white p-8 rounded-lg shadow-sm">
-            <h2 class="section-header">Executive Summary & Performance</h2>
+        <section>
+            <h2>Executive Summary & Performance</h2>
+            <p>
+                Top-performing Enterprise Sales Executive with 10+ years of experience selling SAP services and software into Fortune 500 manufacturing and CPG accounts. Recognized as the <strong>#1 Global Salesperson in 2024</strong> (106% quota attainment). Specialized in a <strong>"Software-led Services"</strong> model, leveraging proprietary platforms (LCPaaS, CENITConnect) to drive complex S/4HANA migrations.
+            </p>
             
-            <div class="flex flex-col md:flex-row gap-8 mb-8">
-                <div class="md:w-2/3">
-                    <p class="text-gray-700 leading-relaxed mb-4">
-                        Top-performing Enterprise Sales Executive with 10+ years of experience selling SAP services and software into Fortune 500 manufacturing and CPG accounts. Recognized as the <strong>#1 Global Salesperson in 2024</strong> (106% quota attainment).
-                    </p>
-                    <p class="text-gray-700 leading-relaxed">
-                        Specialized in a <strong>"Software-led Services"</strong> model, leveraging proprietary platforms (LCPaaS, CENITConnect) to drive complex S/4HANA migrations, data modernization, and recurring revenue growth. Expert in aligning SAP RISE, Hyperscalers (AWS/Azure), and Global SIs to deliver high-margin outcomes.
-                    </p>
-                </div>
-                <div class="md:w-1/3 bg-blue-50 p-4 rounded-lg border border-blue-100">
-                    <h3 class="text-blue-900 font-bold mb-3 text-sm uppercase tracking-wide">Core Competencies</h3>
-                    <ul class="space-y-2 text-sm text-gray-700">
-                        <li class="flex items-start"><span class="text-blue-500 mr-2">✓</span> Software-Attached Sales (SaaS/PaaS)</li>
-                        <li class="flex items-start"><span class="text-blue-500 mr-2">✓</span> SAP Data Modernization & Clean Core</li>
-                        <li class="flex items-start"><span class="text-blue-500 mr-2">✓</span> Complex Deal Orchestration</li>
-                        <li class="flex items-start"><span class="text-blue-500 mr-2">✓</span> Strategic Account Growth</li>
-                    </ul>
-                </div>
+            <div class="competencies" style="margin: 15px 0;">
+                <span class="tag">Software-Attached Sales</span>
+                <span class="tag">Clean Core Strategy</span>
+                <span class="tag">Complex Deal Orchestration</span>
+                <span class="tag">Strategic Account Growth</span>
             </div>
 
-            <!-- KPI Grid -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="stat-item">
-                    <p class="stat-label">Quota Attainment</p>
-                    <p class="stat-value text-green-600">106%</p>
-                    <p class="stat-sub">FY24 Top Performer</p>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-label">Quota Attainment</span>
+                    <span class="stat-value" style="color: #16a34a;">106%</span>
+                    <span class="stat-sub">FY24 Top Performer</span>
                 </div>
-                <div class="stat-item">
-                    <p class="stat-label">Annual Quota</p>
-                    <p class="stat-value">$8.6M</p>
-                    <p class="stat-sub">Services & Software</p>
+                <div class="stat-card">
+                    <span class="stat-label">Annual Quota</span>
+                    <span class="stat-value">$8.6M</span>
+                    <span class="stat-sub">Services & Software</span>
                 </div>
-                <div class="stat-item">
-                    <p class="stat-label">Largest Deal</p>
-                    <p class="stat-value">$5.0M</p>
-                    <p class="stat-sub">$4M Proj + $1M ARR</p>
+                <div class="stat-card">
+                    <span class="stat-label">Largest Deal</span>
+                    <span class="stat-value">$5.0M</span>
+                    <span class="stat-sub">$4M Proj + $1M ARR</span>
                 </div>
-                <div class="stat-item">
-                    <p class="stat-label">Lifetime Rev (CENIT)</p>
-                    <p class="stat-value">$25M+</p>
-                    <p class="stat-sub">13-Year Tenure</p>
+                <div class="stat-card">
+                    <span class="stat-label">Lifetime Rev (CENIT)</span>
+                    <span class="stat-value">$25M+</span>
+                    <span class="stat-sub">13-Year Tenure</span>
                 </div>
             </div>
         </section>
 
-        <!-- Experience: Lemongrass -->
-        <section class="bg-white p-8 rounded-lg shadow-sm">
-            <h2 class="section-header">Professional Experience</h2>
+        <section>
+            <h2>Professional Experience</h2>
 
-            <div class="mb-10">
-                <div class="job-header">
-                    <div>
-                        <h3 class="text-xl font-bold text-gray-900">Lemongrass Consulting</h3>
-                        <p class="text-blue-700 font-medium">Diamond Account Manager (SAP Services & Cloud Transformation)</p>
-                    </div>
-                    <div class="text-right">
-                        <p class="text-gray-600 font-medium">2023 – 2025</p>
-                        <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded font-bold">Delivered $10.5M+ Revenue</span>
-                    </div>
+            <!-- Lemongrass -->
+            <div style="margin-bottom: 30px;">
+                <div style="display:flex; justify-content:space-between; align-items:baseline;">
+                    <h3>Lemongrass Consulting</h3>
+                    <span>2023 – 2025 <span class="date-badge">Delivered $10.5M+ Revenue</span></span>
                 </div>
-                
-                <p class="text-gray-700 italic mb-6">
-                    Managed full sales lifecycle for large CPG and manufacturing clients, transitioning the engagement model from pure Managed Services to a "Software + Services" (LCPaaS) approach.
-                </p>
+                <div class="role-title">Diamond Account Manager (SAP Services & Cloud Transformation)</div>
+                <p>Managed full sales lifecycle for large CPG and manufacturing clients, transitioning the engagement model from pure Managed Services to a "Software + Services" (LCPaaS) approach.</p>
 
-                <!-- Mondelez -->
-                <div class="bg-gray-50 p-6 rounded-lg mb-6 border-l-4 border-blue-500">
-                    <h4 class="text-lg font-bold text-blue-900 mb-2">Strategic Account: Mondelez International (CPG)</h4>
-                    <ul class="list-disc list-outside pl-5 space-y-2 text-gray-700">
+                <div class="project-block">
+                    <h3>Strategic Account: Mondelez International (CPG)</h3>
+                    <ul>
                         <li><strong>Software-Led RISE Enablement:</strong> Closed a <strong>$4.3M</strong> multi-phase SAP RISE transformation. Positioned Lemongrass Cloud Platform (LCPaaS) as the governing software layer, embedding proprietary automation into an Accenture-led transformation.</li>
-                        <li><strong>Data Fabric & Clean Core Strategy:</strong> Led initiatives for <strong>SAP Datasphere extractor replacement</strong>, BW rationalization, and <strong>LCP AI Clean Core</strong> programs under CIO/CTO sponsorship.</li>
-                        <li><strong>Regulated Market Carve-Out (Project ROSE):</strong> Designed and sold a specialized "Operate Agreement" for a geopolitical carve-out, utilizing software cloning to separate the Russia landscape while protecting the global core.</li>
+                        <li><strong>Data Fabric & Clean Core Strategy:</strong> Led initiatives for <strong>SAP Datasphere extractor replacement</strong>, BW rationalization, and <strong>LCP AI Clean Core</strong> programs.</li>
+                        <li><strong>Regulated Market Carve-Out:</strong> Designed and sold a specialized "Operate Agreement" for a geopolitical carve-out (Project ROSE).</li>
                     </ul>
                 </div>
 
-                <!-- SRAM -->
-                <div class="bg-gray-50 p-6 rounded-lg mb-6 border-l-4 border-blue-500">
-                    <h4 class="text-lg font-bold text-blue-900 mb-2">Strategic Account: SRAM Corporation (Manufacturing)</h4>
-                    <ul class="list-disc list-outside pl-5 space-y-2 text-gray-700">
+                <div class="project-block">
+                    <h3>Strategic Account: SRAM Corporation (Manufacturing)</h3>
+                    <ul>
                         <li><strong>S/4HANA on RISE Migration:</strong> Secured a multi-million dollar <strong>RISE + DR</strong> transformation, winning against commodity MSPs by packaging proprietary automation software with high-value security services.</li>
-                        <li><strong>Resilience as a Service:</strong> Designed and sold a dedicated SAP disaster-recovery solution (RPO/RTO targets) and converted it into a recurring "DR Assurance" service.</li>
-                        <li><strong>Security & Compliance:</strong> Staffed PAM, SAP Identity Authentication Service (IAS), and SAP GRC specialists to ensure audit readiness.</li>
-                    </ul>
-                </div>
-
-                <!-- Other Wins -->
-                <div class="px-6">
-                    <p class="text-gray-800 font-semibold mb-2">Additional Strategic Wins:</p>
-                    <ul class="list-disc pl-5 text-gray-700 space-y-1">
-                        <li><strong>Bombardier Recreational Products (BRP):</strong> Drove SAP modernization using <strong>Automation-First</strong> and <strong>LCP AI</strong> methodologies, leveraging hyperscaler funding.</li>
-                        <li><strong>Reynolds Consumer Products:</strong> Advanced SAP Cloud transformation initiatives aligned with SAP’s Vision-to-Value framework.</li>
+                        <li><strong>Resilience as a Service:</strong> Designed and sold a dedicated SAP disaster-recovery solution and converted it into a recurring "DR Assurance" service.</li>
                     </ul>
                 </div>
             </div>
 
-            <div class="border-t border-gray-200 my-8"></div>
-
-            <!-- Experience: CENIT -->
-            <div class="mb-4">
-                <div class="job-header">
-                    <div>
-                        <h3 class="text-xl font-bold text-gray-900">CENIT, North America, Inc.</h3>
-                        <p class="text-blue-700 font-medium">Sales Director, SAP PLM Services</p>
-                    </div>
-                    <div class="text-right">
-                        <p class="text-gray-600 font-medium">2010 – 2023</p>
-                        <p class="text-xs text-gray-500">13-Year Tenure</p>
-                    </div>
+            <!-- CENIT -->
+            <div>
+                <div style="display:flex; justify-content:space-between; align-items:baseline;">
+                    <h3>CENIT, North America, Inc.</h3>
+                    <span>2010 – 2023 <span style="color:#666; font-size:12px;">(13-Year Tenure)</span></span>
                 </div>
-                <p class="text-sm text-gray-500 mb-4">Career Progression: Sales Director (2017-23) | Senior Account Manager (2013-17) | Account Manager (2010-13)</p>
+                <div class="role-title">Sales Director, SAP PLM Services</div>
+                <p style="font-size: 13px; color: #666; margin-top: 0;">Previous: Senior Account Manager (2013-17) | Account Manager (2010-13)</p>
+                
+                <p>Directed the strategic pivot toward high-value SAP PLM services, driving growth through a solution-led sales methodology centered on the <strong>CENITConnect</strong> integration platform.</p>
 
-                <p class="text-gray-700 mb-4">
-                    Directed the strategic pivot toward high-value SAP PLM services, driving growth through a solution-led sales methodology centered on the <strong>CENITConnect</strong> integration platform.
-                </p>
-
-                <ul class="list-disc list-outside pl-5 space-y-2 text-gray-700">
+                <ul>
                     <li><strong>Revenue Impact:</strong> Contributed to over <strong>$25M in lifetime revenue</strong> by shifting sales focus from point solutions to complex, multi-year digital continuity programs.</li>
-                    <li><strong>Marquee Account Expansion:</strong> Expanded footprint in key accounts including <strong>Rivian, Bell Flight, Lam Research, Lincoln Electric, AO Smith, Timken, and Mitsubishi Electric</strong>.</li>
+                    <li><strong>Marquee Account Expansion:</strong> Expanded footprint in key accounts including <strong>Rivian, Bell Flight, Lam Research, Lincoln Electric, and Mitsubishi Electric</strong>.</li>
                     <li><strong>Data Integration Strategy:</strong> Secured complex digital continuity programs bridging <strong>Engineering (PLM)</strong> and <strong>SAP ERP</strong>. Positioned software as the critical "Data Bridge" for Master Data integrity.</li>
-                    <li><strong>Software-First Transition:</strong> Successfully shifted customer conversations from one-time projects to recurring software subscriptions + implementation services.</li>
                 </ul>
             </div>
         </section>
 
-        <!-- Earlier Roles & Education -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <section class="bg-white p-8 rounded-lg shadow-sm">
-                <h2 class="section-header text-lg">Earlier Roles</h2>
-                <ul class="space-y-4 text-gray-700">
-                    <li>
-                        <strong class="block text-gray-900">Regional Sales Manager & Senior AM</strong>
-                        <span class="text-sm text-gray-600">INCAT (TATA Technologies)</span>
-                    </li>
-                    <li>
-                        <strong class="block text-gray-900">Engineering Software Sales</strong>
-                        <span class="text-sm text-gray-600">IBM (UK)</span>
-                    </li>
-                    <li>
-                        <strong class="block text-gray-900">Major Account Consulting Sales</strong>
-                        <span class="text-sm text-gray-600">Think3</span>
-                    </li>
-                </ul>
-            </section>
-
-            <section class="bg-white p-8 rounded-lg shadow-sm">
-                <h2 class="section-header text-lg">Education & Community</h2>
-                <div class="mb-6">
-                    <strong class="block text-gray-900">B.Eng., Engineering</strong>
-                    <span class="text-gray-600">University College Dublin (UCD)</span>
+        <section>
+            <h2>Education & Community</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div>
+                    <h3>Education</h3>
+                    <div><strong>B.Eng., Engineering</strong></div>
+                    <div style="color:#555;">University College Dublin (UCD)</div>
                 </div>
                 <div>
-                    <strong class="block text-gray-900 mb-2">Leadership & Impact</strong>
-                    <ul class="space-y-2 text-sm text-gray-700">
-                        <li class="flex items-start">
-                            <span class="text-blue-500 mr-2">♥</span>
-                            <span>Raised <strong>>$1M</strong> for the Arsenal Foundation (Refugees in Jordan/Ukraine).</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-blue-500 mr-2">🎙</span>
-                            <span>Co-host of an international soccer podcast covering <em>The Beautiful Game</em>.</span>
-                        </li>
+                    <h3>Leadership & Impact</h3>
+                    <ul style="margin-top: 0;">
+                        <li>Raised <strong>>$1M</strong> for the Arsenal Foundation (Refugees in Jordan/Ukraine).</li>
+                        <li>Co-host of an international soccer podcast covering <em>The Beautiful Game</em>.</li>
                     </ul>
                 </div>
-            </section>
-        </div>
-
-        <!-- Footer for Print -->
-        <div class="text-center text-gray-400 text-xs pt-8 pb-4 no-print">
-            <p>Generated Strategic Portfolio - Paul Cassidy</p>
-        </div>
+            </div>
+        </section>
 
     </div>
 
